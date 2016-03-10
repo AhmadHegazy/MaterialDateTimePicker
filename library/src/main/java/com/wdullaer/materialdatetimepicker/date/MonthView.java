@@ -634,6 +634,12 @@ public abstract class MonthView extends View {
                 dayLabel = dayName.substring(len -1, len);
             }
 
+            //Arabic Labels should select all characters
+            if(locale.getLanguage().equals("ar")){
+                int len = dayName.length();
+                dayLabel = dayName.length();
+            }
+            
             // Most hebrew labels should select the second to last character
             if (locale.getLanguage().equals("he") || locale.getLanguage().equals("iw")) {
                 if(mDayLabelCalendar.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY) {
